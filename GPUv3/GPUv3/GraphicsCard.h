@@ -55,6 +55,10 @@ public:
 	operator string();
 	///Operator returning specific output interface adress from array 
 	OutputInterface operator [](int);
+	string getBrand();
+	string getModel();
+	string getNumber();
+	string getNop();
 protected:
 	int performanceScore;///< Specifies performance score of the card
 	VideoMemory memory;///< Object containing info about card video memory

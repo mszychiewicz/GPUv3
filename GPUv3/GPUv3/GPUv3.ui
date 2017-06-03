@@ -109,7 +109,7 @@
    <sender>pushButton_3</sender>
    <signal>clicked()</signal>
    <receiver>GPUv3Class</receiver>
-   <slot>deleteCard()</slot>
+   <slot>specification()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>100</x>
@@ -125,7 +125,7 @@
    <sender>pushButton_4</sender>
    <signal>clicked()</signal>
    <receiver>GPUv3Class</receiver>
-   <slot>specification()</slot>
+   <slot>deleteCard()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>100</x>

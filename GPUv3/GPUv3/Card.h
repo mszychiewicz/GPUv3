@@ -26,5 +26,9 @@ public:
 	virtual void saveToFile() = 0;
 	///Abstract and virtual function loading card data from file
 	virtual void loadFromFile() = 0;
+	virtual string getBrand() = 0;
+	virtual string getModel() = 0;
+	virtual string getNumber() = 0;
+	virtual string getNop() = 0;
 };
 

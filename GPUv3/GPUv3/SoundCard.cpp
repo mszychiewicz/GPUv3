@@ -88,3 +88,23 @@ istream& operator>> (istream &o, SoundCard &card)
 		o >> card.interface[i];
 	return o;
 }
+
+string SoundCard::getBrand()
+{
+	return brand;
+}
+
+string SoundCard::getModel()
+{
+	return model;
+}
+
+string SoundCard::getNumber()
+{
+	return to_string(number);
+}
+
+string SoundCard::getNop()
+{
+	return to_string(numberOfPorts);
+}

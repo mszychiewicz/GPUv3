@@ -1,11 +1,13 @@
 #pragma once
 
 #include <QtWidgets/QMainWindow>
+#include <QStringListModel>
 #include "ui_GPUv3.h"
 #include "Card.h"
 #include "GamingGraphicsCard.h"
 #include "GraphicsCard.h"
 #include "SoundCard.h"
+#include "Specification.h"
 
 class GPUv3 : public QMainWindow
 {
@@ -24,4 +26,6 @@ public slots:
 private:
 	Ui::GPUv3Class ui;
 	vector<Card*> cards;
+	QStringListModel *cardList;
+	QStringList *list;
 };

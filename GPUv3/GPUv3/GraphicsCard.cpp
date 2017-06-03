@@ -195,3 +195,23 @@ istream& operator>> (istream &o, GraphicsCard &card)
 		o >> card.interface[i];
 	return o;
 }
+
+string GraphicsCard::getBrand()
+{
+	return brand;
+}
+
+string GraphicsCard::getModel()
+{
+	return model;
+}
+
+string GraphicsCard::getNumber()
+{
+	return to_string(number);
+}
+
+string GraphicsCard::getNop()
+{
+	return to_string(numberOfPorts);
+}

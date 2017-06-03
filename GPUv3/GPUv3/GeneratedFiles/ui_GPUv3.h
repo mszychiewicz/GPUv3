@@ -70,8 +70,8 @@ public:
         GPUv3Class->setStatusBar(statusBar);
 
         retranslateUi(GPUv3Class);
-        QObject::connect(pushButton_3, SIGNAL(clicked()), GPUv3Class, SLOT(deleteCard()));
-        QObject::connect(pushButton_4, SIGNAL(clicked()), GPUv3Class, SLOT(specification()));
+        QObject::connect(pushButton_3, SIGNAL(clicked()), GPUv3Class, SLOT(specification()));
+        QObject::connect(pushButton_4, SIGNAL(clicked()), GPUv3Class, SLOT(deleteCard()));
         QObject::connect(pushButton_6, SIGNAL(clicked()), GPUv3Class, SLOT(addGamingGraphicsCard()));
         QObject::connect(pushButton_7, SIGNAL(clicked()), GPUv3Class, SLOT(addSoundCard()));
         QObject::connect(pushButton_5, SIGNAL(clicked()), GPUv3Class, SLOT(addGraphicsCard()));
