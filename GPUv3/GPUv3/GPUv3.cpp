@@ -4,6 +4,7 @@ GPUv3::GPUv3(QWidget *parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
+	this->setFixedSize(515, 320);
 	disableButtons();
 	cardList = new QStringListModel();
 	list = new QStringList();

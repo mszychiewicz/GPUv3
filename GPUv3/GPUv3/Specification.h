@@ -1,11 +1,15 @@
 ﻿#pragma once
 #include <QtWidgets/QDialog>
-#include <QTextStream>
 #include "ui_Specification.h"
 #include "Card.h"
+#include "GraphicsCard.h"
+#include "GamingGraphicsCard.h"
+#include "SoundCard.h"
+#include <QFile>
 #include <QString>
 #include <QTextStream>
 #include <QVBoxLayout>
+#include <QMessageBox>
 
 class Specification : public QDialog//, public Ui::Dialog
 {
@@ -20,6 +24,11 @@ private:
 	Card* card;
 	QGraphicsScene* scene;
 	QPixmap* image;
+	QList<QLineEdit*> add;
+	QList<QLineEdit*> gpu;
+	QList<QLineEdit*> oi1;
+	QList<QLineEdit*> oi2;
+	QList<QLineEdit*> vm;
 	void loadSpecs();
 
 };

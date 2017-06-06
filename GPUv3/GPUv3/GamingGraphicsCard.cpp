@@ -2,6 +2,7 @@
 
 GamingGraphicsCard::GamingGraphicsCard()
 {
+	className = "GamingGraphicsCard";
 	brand = "Nvidia";
 	number = 1380;
 	model = "GTX " + to_string(number);

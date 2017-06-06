@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <QStringList>
 
 using std::string;
 using namespace std;
@@ -8,6 +9,7 @@ using namespace std;
 class GraphicsProcessingUnit
 {
 public:
+	QStringList getGpu2();
 	///Default constructor
 	GraphicsProcessingUnit();
 	///Default destructor

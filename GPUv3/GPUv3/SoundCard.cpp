@@ -4,6 +4,7 @@ using namespace std;
 
 SoundCard::SoundCard()
 {
+	className = "SoundCard";
 	brand = "ASUS";
 	number = 2;
 	model = "Xonar Essence STX " + to_string(number);
@@ -89,22 +90,11 @@ istream& operator>> (istream &o, SoundCard &card)
 	return o;
 }
 
-string SoundCard::getBrand()
+string SoundCard::getWorkingOrPerformanceScore()
 {
-	return brand;
+	if (working)
+		return "Working";
+	else
+		return "Not Working";
 }
 
-string SoundCard::getModel()
-{
-	return model;
-}
-
-string SoundCard::getNumber()
-{
-	return to_string(number);
-}
-
-string SoundCard::getNop()
-{
-	return to_string(numberOfPorts);
-}

@@ -27,11 +27,8 @@ public:
 	friend ostream& operator<< (ostream &s, SoundCard &card);
 	///Input stream operator
 	friend istream& operator >> (istream &o, SoundCard &card);
-	string getBrand();
-	string getModel();
-	string getNumber();
-	string getNop();
 private:
+	string getWorkingOrPerformanceScore();
 	vector <OutputInterface> interface;///< Vector containing objects specifying card output interfaces
 	bool working;///< Bool indicating if the sound card works
 };

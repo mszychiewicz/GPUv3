@@ -33,6 +33,7 @@ public:
     QPushButton *pushButton_5;
     QPushButton *pushButton_6;
     QPushButton *pushButton_7;
+    QPushButton *pushButton_8;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -40,7 +41,14 @@ public:
     {
         if (GPUv3Class->objectName().isEmpty())
             GPUv3Class->setObjectName(QStringLiteral("GPUv3Class"));
-        GPUv3Class->resize(514, 326);
+        GPUv3Class->setEnabled(true);
+        GPUv3Class->resize(512, 318);
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(GPUv3Class->sizePolicy().hasHeightForWidth());
+        GPUv3Class->setSizePolicy(sizePolicy);
+        GPUv3Class->setAnimated(true);
         centralWidget = new QWidget(GPUv3Class);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         listView = new QListView(centralWidget);
@@ -61,6 +69,11 @@ public:
         pushButton_7 = new QPushButton(centralWidget);
         pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
         pushButton_7->setGeometry(QRect(10, 100, 181, 31));
+        pushButton_8 = new QPushButton(centralWidget);
+        pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
+        pushButton_8->setGeometry(QRect(10, 250, 181, 31));
+        sizePolicy.setHeightForWidth(pushButton_8->sizePolicy().hasHeightForWidth());
+        pushButton_8->setSizePolicy(sizePolicy);
         GPUv3Class->setCentralWidget(centralWidget);
         mainToolBar = new QToolBar(GPUv3Class);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -75,6 +88,7 @@ public:
         QObject::connect(pushButton_6, SIGNAL(clicked()), GPUv3Class, SLOT(addGamingGraphicsCard()));
         QObject::connect(pushButton_7, SIGNAL(clicked()), GPUv3Class, SLOT(addSoundCard()));
         QObject::connect(pushButton_5, SIGNAL(clicked()), GPUv3Class, SLOT(addGraphicsCard()));
+        QObject::connect(pushButton_8, SIGNAL(clicked()), GPUv3Class, SLOT(close()));
 
         QMetaObject::connectSlotsByName(GPUv3Class);
     } // setupUi
@@ -87,6 +101,7 @@ public:
         pushButton_5->setText(QApplication::translate("GPUv3Class", "Add graphics card", Q_NULLPTR));
         pushButton_6->setText(QApplication::translate("GPUv3Class", "Add gaming graphics card", Q_NULLPTR));
         pushButton_7->setText(QApplication::translate("GPUv3Class", "Add sound card", Q_NULLPTR));
+        pushButton_8->setText(QApplication::translate("GPUv3Class", "Exit", Q_NULLPTR));
     } // retranslateUi
 
 };

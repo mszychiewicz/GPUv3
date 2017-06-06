@@ -9,6 +9,7 @@ using namespace std;
 class Card
 {
 protected:
+	string className;
 	int number; ///< Specifies card number
 	int numberOfPorts; ///< Specifies number of ports on the card
 	string brand; ///< Specifies brand of the card
@@ -26,9 +27,11 @@ public:
 	virtual void saveToFile() = 0;
 	///Abstract and virtual function loading card data from file
 	virtual void loadFromFile() = 0;
-	virtual string getBrand() = 0;
-	virtual string getModel() = 0;
-	virtual string getNumber() = 0;
-	virtual string getNop() = 0;
+	string getClassName();
+	string getBrand();
+	string getModel();
+	string getNumber();
+	string getNumberOfPorts();
+	virtual string getWorkingOrPerformanceScore() = 0;
 };
 

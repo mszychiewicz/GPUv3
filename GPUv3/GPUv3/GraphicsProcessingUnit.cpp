@@ -37,3 +37,13 @@ istream& operator >> (istream &o, GraphicsProcessingUnit &gpu)
 	o >> gpu.coreClock;
 	return o;
 }
+
+QStringList GraphicsProcessingUnit::getGpu2()
+{
+	QStringList getgpu2;
+	getgpu2 << QString::fromStdString(codeName);
+	getgpu2 << QString::fromStdString(to_string(numberOfCores));
+	getgpu2 << QString::fromStdString(to_string(fabrication));
+	getgpu2 << QString::fromStdString(to_string(coreClock));
+	return getgpu2;
+}

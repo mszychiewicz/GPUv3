@@ -9,7 +9,7 @@ int GraphicsCard::numberOfCards = 0;
 
 GraphicsCard::GraphicsCard()
 {
-
+	className = "GraphicsCard";
 	brand = "GeForce";
 	number = 1200 + (10 * (1 + (rand() % 9))); //random number from 1210 to 1290
 	model = "GTX " + to_string(number);
@@ -196,22 +196,14 @@ istream& operator>> (istream &o, GraphicsCard &card)
 	return o;
 }
 
-string GraphicsCard::getBrand()
+string GraphicsCard::getWorkingOrPerformanceScore()
 {
-	return brand;
+	return to_string(performanceScore);
 }
 
-string GraphicsCard::getModel()
+QStringList GraphicsCard::getGpu()
 {
-	return model;
-}
-
-string GraphicsCard::getNumber()
-{
-	return to_string(number);
-}
-
-string GraphicsCard::getNop()
-{
-	return to_string(numberOfPorts);
+	QStringList getgpu;
+	getgpu = gpu.getGpu2();
+	return getgpu;
 }

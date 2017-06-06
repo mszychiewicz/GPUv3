@@ -29,5 +29,6 @@ private:
 	bool sliCompatibility;///< Bool specyfying if the card is compatible with SLI technology
 	string ledBacklight;///< Specifies color of the card LED backlight
 	bool waterCooled;///<Bool specyfying if the card is water cooled
+	QStringList getAdd();
 };
 

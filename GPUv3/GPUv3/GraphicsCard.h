@@ -6,6 +6,7 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include <QStringList>
 
 using namespace std;
 ///Class inheriting after Card
@@ -55,15 +56,15 @@ public:
 	operator string();
 	///Operator returning specific output interface adress from array 
 	OutputInterface operator [](int);
-	string getBrand();
-	string getModel();
-	string getNumber();
-	string getNop();
 protected:
 	int performanceScore;///< Specifies performance score of the card
 	VideoMemory memory;///< Object containing info about card video memory
 	vector <OutputInterface> interface;///< Vector containing objects specifying card output interfaces
 	GraphicsProcessingUnit gpu;///< Object containing info about card GPU
 	static int numberOfCards;///< Specifies number of created cards
+	string getWorkingOrPerformanceScore();
+	QStringList getGpu();
+	QStringList getOi();
+	QStringList getVm();
 };
 
