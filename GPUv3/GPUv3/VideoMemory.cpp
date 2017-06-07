@@ -34,3 +34,12 @@ istream& operator >> (istream &o, VideoMemory &memory)
 	o >> memory.bandwidth;
 	return o;
 }
+
+QStringList VideoMemory::getVm2()
+{
+	QStringList getvm2;
+	getvm2 << QString::fromStdString(type);
+	getvm2 << QString::fromStdString(to_string(memoryClockRate) + " MHz");
+	getvm2 << QString::fromStdString(to_string(bandwidth) + " GB/s");
+	return getvm2;
+}

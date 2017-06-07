@@ -98,3 +98,27 @@ string SoundCard::getWorkingOrPerformanceScore()
 		return "Not Working";
 }
 
+QStringList SoundCard::getGpu()
+{
+	QStringList getgpu;
+	return getgpu;
+}
+
+QStringList SoundCard::getOi(int a)
+{
+	QStringList getoi;
+	getoi = interface[a].getOi2();
+	return getoi;
+}
+
+QStringList SoundCard::getVm()
+{
+	QStringList getvm;
+	return getvm;
+}
+
+QStringList SoundCard::getAdd()
+{
+	QStringList getAdd;
+	return getAdd;
+}

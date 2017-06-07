@@ -16,12 +16,18 @@ Specification::Specification(Card* card, QWidget * parent) : QDialog(parent)
 	gpu = ui.gpuBox->findChildren<QLineEdit*>();
 	oi1 = ui.oi1Box->findChildren<QLineEdit*>();
 	oi2 = ui.oi2Box->findChildren<QLineEdit*>();
-	//vm = ui.vmBox->findChildren<QLineEdit*>();
+	vm = ui.vmBox->findChildren<QLineEdit*>();
 	loadSpecs();
 }
 
 Specification::~Specification() {
 	
+}
+
+void Specification::showSpecs(QList<QString> data, int a, QList<QLineEdit*> dataEdit)
+{
+	for (int i = 0; i < a; i++)
+		dataEdit[i]->setText(data[i]);
 }
 
 void Specification::loadSpecs() 
@@ -37,16 +43,21 @@ void Specification::loadSpecs()
 
 		ui.performanceEdit->setEnabled(false);
 		ui.gpuBox->setEnabled(false);
-		ui.oi1Box->setEnabled(false);
-		ui.oi2Box->setEnabled(false);
 		ui.addBox->setEnabled(false);
 		ui.vmBox->setEnabled(false);
+
+		QStringList oi1Data = card->getOi(0);
+		QStringList oi2Data = card->getOi(1);
 
 		ui.brandEdit->setText(QString::fromStdString(card->getBrand()));
 		ui.modelEdit->setText(QString::fromStdString(card->getModel()));
 		ui.numberEdit->setText(QString::fromStdString(card->getNumber()));
 		ui.numberOfPortsEdit->setText(QString::fromStdString(card->getNumberOfPorts()));
 		ui.workingEdit->setText(QString::fromStdString(card->getWorkingOrPerformanceScore()));
+
+		showSpecs(oi1Data, 2, oi1);
+		showSpecs(oi2Data, 2, oi2);
+
 	}
 
 	if (card->getClassName() == "GraphicsCard")
@@ -59,15 +70,22 @@ void Specification::loadSpecs()
 		ui.workingEdit->setEnabled(false);
 		ui.addBox->setEnabled(false);
 
-		//for (int i = 0; i < 3; i++) {
-		//	gpu[i]->setText(card.getgpu()); //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-		//}
+		QStringList gpuData = card->getGpu();
+		QStringList oi1Data = card->getOi(0);
+		QStringList oi2Data = card->getOi(1);
+		QStringList vmData = card->getVm();
+
 
 		ui.brandEdit->setText(QString::fromStdString(card->getBrand()));
 		ui.modelEdit->setText(QString::fromStdString(card->getModel()));
 		ui.numberEdit->setText(QString::fromStdString(card->getNumber()));
 		ui.numberOfPortsEdit->setText(QString::fromStdString(card->getNumberOfPorts()));
 		ui.performanceEdit->setText(QString::fromStdString(card->getWorkingOrPerformanceScore()));
+
+		showSpecs(gpuData, 4, gpu);
+		showSpecs(oi1Data, 2, oi1);
+		showSpecs(oi2Data, 2, oi2);
+		showSpecs(vmData, 3, vm);
 		
 	}
 
@@ -80,11 +98,23 @@ void Specification::loadSpecs()
 
 		ui.workingEdit->setEnabled(false);
 
+		QStringList addData = card->getAdd();
+		QStringList gpuData = card->getGpu();
+		QStringList oi1Data = card->getOi(0);
+		QStringList oi2Data = card->getOi(1);
+		QStringList vmData = card->getVm();
+
 		ui.brandEdit->setText(QString::fromStdString(card->getBrand()));
 		ui.modelEdit->setText(QString::fromStdString(card->getModel()));
 		ui.numberEdit->setText(QString::fromStdString(card->getNumber()));
 		ui.numberOfPortsEdit->setText(QString::fromStdString(card->getNumberOfPorts()));
 		ui.performanceEdit->setText(QString::fromStdString(card->getWorkingOrPerformanceScore()));
+
+		showSpecs(addData, 4, add);
+		showSpecs(gpuData, 4, gpu);
+		showSpecs(oi1Data, 2, oi1);
+		showSpecs(oi2Data, 2, oi2);
+		showSpecs(vmData, 3, vm);
 
 	}
 	/*ui.performanceScoreEdit->setText(QString::fromStdString(card->get()));
@@ -110,3 +140,4 @@ void Specification::loadSpecs()
 	ui.bandwidthEdit->setText(QString::fromStdString(card->get()));
 	ui.memoryClockRateEdit->setText(QString::fromStdString(card->get()));*/
 }
+

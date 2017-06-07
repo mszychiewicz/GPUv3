@@ -207,3 +207,23 @@ QStringList GraphicsCard::getGpu()
 	getgpu = gpu.getGpu2();
 	return getgpu;
 }
+
+QStringList GraphicsCard::getOi(int a)
+{
+	QStringList getoi;
+	getoi = interface[a].getOi2();
+	return getoi;
+}
+
+QStringList GraphicsCard::getVm()
+{
+	QStringList getvm;
+	getvm = memory.getVm2();
+	return getvm;
+}
+
+QStringList GraphicsCard::getAdd()
+{
+	QStringList getadd;
+	return getadd;
+}

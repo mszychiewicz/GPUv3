@@ -30,5 +30,6 @@ private:
 	QList<QLineEdit*> oi2;
 	QList<QLineEdit*> vm;
 	void loadSpecs();
+	void showSpecs(QList<QString>, int, QList<QLineEdit*>);
 
 };

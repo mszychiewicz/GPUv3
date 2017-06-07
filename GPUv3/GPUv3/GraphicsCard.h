@@ -63,8 +63,10 @@ protected:
 	GraphicsProcessingUnit gpu;///< Object containing info about card GPU
 	static int numberOfCards;///< Specifies number of created cards
 	string getWorkingOrPerformanceScore();
+	QStringList getAdd();
 	QStringList getGpu();
-	QStringList getOi();
+	QStringList getOi(int);
 	QStringList getVm();
+
 };
 

@@ -10,7 +10,6 @@ GamingGraphicsCard::GamingGraphicsCard()
 	numberOfFans = 3;
 	customPaint = "Ruby Red";
 	ledBacklight = "Red";
-	sliCompatibility = true;
 	waterCooled = true;
 }
 
@@ -72,10 +71,6 @@ ostream& operator<< (ostream &s, GamingGraphicsCard &card)
 	cout << "Number of fans: "; s << card.numberOfFans << endl;
 	cout << "Paintjob: "; s << card.customPaint << endl;
 	cout << "SLI ";
-	if(card.sliCompatibility)
-		cout << "compatible" << endl;
-	else 
-		cout << "incompatible" << endl;
 	cout << "LED backlight: "; s << card.ledBacklight << endl;
 	cout << "Water cooled: ";
 	if (card.waterCooled)
@@ -106,8 +101,15 @@ istream& operator >> (istream &o, GamingGraphicsCard &card)
 	return o;
 }
 
-int numberOfFans;
-string customPaint;
-bool sliCompatibility;
-string ledBacklight;
-bool waterCooled;
+QStringList GamingGraphicsCard::getAdd()
+{
+	QStringList getadd;
+	if (waterCooled)
+		getadd << QString::fromStdString("Yes");
+	else
+		getadd << QString::fromStdString("No");
+	getadd << QString::fromStdString(customPaint);
+	getadd << QString::fromStdString(to_string(numberOfFans));
+	getadd << QString::fromStdString(ledBacklight);
+	return getadd;
+}

@@ -3,6 +3,7 @@
 #include<iostream>
 #include<sstream>
 #include<fstream>
+#include <QStringList>
 
 using namespace std;
 ///Abstract class
@@ -33,5 +34,9 @@ public:
 	string getNumber();
 	string getNumberOfPorts();
 	virtual string getWorkingOrPerformanceScore() = 0;
+	virtual QStringList getAdd() = 0;
+	virtual QStringList getGpu() = 0;
+	virtual QStringList getOi(int) = 0;
+	virtual QStringList getVm() = 0;
 };
 

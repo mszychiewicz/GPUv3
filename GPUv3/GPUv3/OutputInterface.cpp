@@ -57,3 +57,11 @@ void OutputInterface::changeTypeToJack()
 {
 	type = "Jack";
 }
+
+QStringList OutputInterface::getOi2()
+{
+	QStringList getoi2;
+	getoi2 << QString::fromStdString(to_string(standard) + ".0");
+	getoi2 << QString::fromStdString(type);
+	return getoi2;
+}

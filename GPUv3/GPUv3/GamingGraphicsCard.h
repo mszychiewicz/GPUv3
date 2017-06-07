@@ -1,5 +1,6 @@
 #pragma once
 #include "GraphicsCard.h"
+#include <QStringList>
 
 using namespace std;
 ///Class inheriting after GraphicsCard
@@ -23,12 +24,13 @@ public:
 	friend ostream& operator<< (ostream &s, GamingGraphicsCard &card);
 	///Input stream operator
 	friend istream& operator>> (istream &o, GamingGraphicsCard &card);
+
+	QStringList getAdd();
 private:
 	int numberOfFans;///< Specifies number of fans the card has
 	string customPaint;///< Specifies color of the card custom paint
-	bool sliCompatibility;///< Bool specyfying if the card is compatible with SLI technology
 	string ledBacklight;///< Specifies color of the card LED backlight
 	bool waterCooled;///<Bool specyfying if the card is water cooled
-	QStringList getAdd();
+	
 };
 

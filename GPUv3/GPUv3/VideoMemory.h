@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <QStringList>
 
 using std::string;
 using namespace std;
@@ -11,6 +12,7 @@ private:
 	int memoryClockRate;///<Specifies memory clock rate
 	int bandwidth;///<Specifies memory badwidth
 public:
+	QStringList getVm2();
 	///Default constructor
 	VideoMemory();
 	///Default destructor

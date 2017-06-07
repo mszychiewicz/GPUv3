@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include <QStringList>
 
 using namespace std;
 ///Class inheriting after Card
@@ -31,5 +32,9 @@ private:
 	string getWorkingOrPerformanceScore();
 	vector <OutputInterface> interface;///< Vector containing objects specifying card output interfaces
 	bool working;///< Bool indicating if the sound card works
+	QStringList getAdd();
+	QStringList getGpu();
+	QStringList getOi(int);
+	QStringList getVm();
 };
 

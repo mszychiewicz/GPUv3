@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <QStringList>
 
 using std::string;
 using namespace std;
@@ -11,6 +12,7 @@ private:
 	string type;///< Specifies output interface type
 	int standard;///< Specifies standard in which the output interface was made
 public:
+	QStringList getOi2();
 	///Default constructor
 	OutputInterface();
 	///Default destructor
